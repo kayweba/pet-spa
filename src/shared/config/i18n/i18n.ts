@@ -19,9 +19,8 @@ i18n
             escapeValue: false, // not needed for react as it escapes by default
         },
         backend: {
-            loadPath: '/locales/{{lng}}/{{ns}}.main.json'
-        }
+            loadPath: '/locales/{{lng}}/{{ns}}.main.json',
+        },
     });
-
 
 export default i18n;
