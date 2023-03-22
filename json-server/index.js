@@ -53,5 +53,5 @@ server.use(router);
 
 // запуск сервера
 server.listen(8000, () => {
-    console.log('Сервер запущен на 8000 порту');
+    console.log('server is running on 8000 port');
 });
