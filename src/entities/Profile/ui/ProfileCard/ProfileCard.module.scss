@@ -7,13 +7,7 @@
     margin-top: 10px;
 }
 
-.loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-}
-
+.loading,
 .error {
     display: flex;
     align-items: center;
@@ -23,8 +17,8 @@
 
 .avatarWrapper {
     display: flex;
-    justify-content: center;
     width: 100%;
+    justify-content: center;
 }
 
 .editing {

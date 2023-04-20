@@ -12,11 +12,11 @@ const AppRouter = () => {
         if (route.authOnly && !isAuth) {
             return false;
         }
+
         return true;
     }), [isAuth]);
 
     return (
-
         <Routes>
             {routes.map(({ element, path }) => (
                 <Route

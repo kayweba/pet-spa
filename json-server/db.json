@@ -29,10 +29,6 @@
     "first": "Андрей",
     "lastname": "Клепко",
     "age": 24,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Саров",
-    "username": "admin",
-    "avatar": "https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/256/external-hacker-cryptocurrency-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"
+    "city": "Саров"
   }
 }

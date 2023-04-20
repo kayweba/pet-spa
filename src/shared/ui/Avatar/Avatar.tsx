@@ -3,8 +3,8 @@ import { CSSProperties, useMemo } from 'react';
 import cls from './Avatar.module.scss';
 
 interface AvatarProps {
-    className?: string
-    src?: string
+    className?: string;
+    src?: string;
     size?: number;
     alt?: string;
 }

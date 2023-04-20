@@ -8,9 +8,9 @@ export enum TextTheme {
 }
 
 export enum TextAlign {
-    RIGHT='right',
-    LEFT='left',
-    CENTER='center',
+    RIGHT = 'right',
+    LEFT = 'left',
+    CENTER = 'center',
 }
 
 interface TextProps {

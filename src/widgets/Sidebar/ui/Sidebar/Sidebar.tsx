@@ -1,16 +1,16 @@
-import React, { memo, useMemo, useState } from 'react';
-
 import { classNames } from 'shared/lib/classNames/classNames';
+import { memo, useMemo, useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher/LanguageSwitcher';
+import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
+import cls from './Sidebar.module.scss';
 import { SidebarItemsList } from '../../model/items';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
-    className?: string
+    className?: string;
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
@@ -35,11 +35,11 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         >
             <Button
                 data-testid="sidebar-toggle"
+                onClick={onToggle}
                 className={cls.collapseBtn}
                 theme={ButtonTheme.BACKGROUND_INVERTED}
+                size={ButtonSize.L}
                 square
-                size={ButtonSize.M}
-                onClick={onToggle}
             >
                 {collapsed ? '>' : '<'}
             </Button>
@@ -48,7 +48,10 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             </div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
-                <LanguageSwitcher short={collapsed} className={cls.lang} />
+                <LangSwitcher
+                    short={collapsed}
+                    className={cls.lang}
+                />
             </div>
         </div>
     );

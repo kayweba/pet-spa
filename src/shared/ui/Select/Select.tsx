@@ -1,21 +1,19 @@
-import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { Wrapper } from '@storybook/addon-actions/dist/ts3.9/components/ActionLogger';
 import { ChangeEvent, memo, useMemo } from 'react';
 import cls from './Select.module.scss';
 
 export interface SelectOption {
     value: string;
-    content: string
+    content: string;
 }
 
 interface SelectProps {
-    className?: string
-    label?: string
-    options?: SelectOption[]
-    onChange?: (value: string) => void
-    value?: string
-    readonly?: boolean
+    className?: string;
+    label?: string;
+    options?: SelectOption[];
+    value?: string;
+    onChange?: (value: string) => void;
+    readonly?: boolean;
 }
 
 export const Select = memo((props: SelectProps) => {
@@ -29,10 +27,12 @@ export const Select = memo((props: SelectProps) => {
     } = props;
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-        onChange?.(e.target.value);
+        if (onChange) {
+            onChange(e.target.value);
+        }
     };
 
-    const optionList = useMemo(() => options?.map((opt) => (
+    const optionsList = useMemo(() => options?.map((opt) => (
         <option
             className={cls.option}
             value={opt.value}
@@ -45,12 +45,19 @@ export const Select = memo((props: SelectProps) => {
     const mods: Mods = {};
 
     return (
-        <div className={classNames(cls.Wrapper, {}, [className])}>
+        <div className={classNames(cls.Wrapper, mods, [className])}>
             {label && (
-                <span className={cls.label}>{`${label}>`}</span>
+                <span className={cls.label}>
+                    {`${label}>`}
+                </span>
             )}
-            <select disabled={readonly} name="" id="" className={cls.select} value={value} onChange={onChangeHandler}>
-                {optionList}
+            <select
+                disabled={readonly}
+                className={cls.select}
+                value={value}
+                onChange={onChangeHandler}
+            >
+                {optionsList}
             </select>
         </div>
     );
