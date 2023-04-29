@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { AxiosInstance } from 'axios';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Article } from '../../types/Article';
 
@@ -8,7 +7,7 @@ export const fetchArticleById = createAsyncThunk<
     string,
     ThunkConfig<string>
     >(
-        'profile/fetchProfileData',
+        'articleDetails/fetchProfileData',
         async (articleId, thunkApi) => {
             const { extra, rejectWithValue } = thunkApi;
 
