@@ -102,6 +102,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Новый комментарий",
+      "id": "sYrQNio"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Комментарий от user",
+      "id": "W4XmRih"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Hello!",
+      "id": "lcBZx9t"
     }
   ],
   "users": [
@@ -120,14 +138,28 @@
       "avatar": "https://avatars.mds.yandex.net/i?id=0bcb6a284dec9c56343e2cc83fe2c840fd553c93-8253146-images-thumbs&n=13"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://avatars.mds.yandex.net/i?id=0bcb6a284dec9c56343e2cc83fe2c840fd553c93-8253146-images-thumbs&n=13"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://avatars.mds.yandex.net/i?id=0bcb6a284dec9c56343e2cc83fe2c840fd553c93-8253146-images-thumbs&n=13"
+    },
+    {
+      "id": "2",
+      "first": "Андрей",
+      "lastname": "Klepko",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Sarov",
+      "username": "andrew",
+      "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
+    }
+  ]
 }
