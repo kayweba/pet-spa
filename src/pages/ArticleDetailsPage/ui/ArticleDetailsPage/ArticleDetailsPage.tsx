@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -11,15 +11,17 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
-import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
+import {
+    fetchCommentsByArticleId,
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import cls from './ArticleDetailsPage.module.scss';
+import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
+import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 
 interface ArticleDetailsPageProps {
-    className?: string
+    className?: string;
 }
 
 const reducers: ReducersList = {
@@ -49,7 +51,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <Page>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 {t('Статья не найдена')}
             </Page>
         );

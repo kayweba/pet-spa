@@ -12,7 +12,7 @@ import {
     ProfileCard,
     profileReducer, ValidateProfileError,
 } from 'entities/Profile';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
@@ -20,7 +20,7 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -33,13 +33,13 @@ interface ProfilePageProps {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation('profile');
-    const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{ id: string }>();
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
